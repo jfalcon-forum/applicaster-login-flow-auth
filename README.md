@@ -5,6 +5,7 @@ Lambda function that handles retrieving access token, refresh tokens, and revoki
 To initalize local environment
 
 AWS Lambda - applicaster-login-flow-test
+
 AWS Gateway - applicaster-login-flow-test
 
 `npm install`
