@@ -14,4 +14,3 @@ To test locally, you'll need to comment out the export.handler function and indi
 `node index.js`
 
 You also will need to create a .env file that contains the AUTH_TEST_CLIENT_ID and AUTH_TEST_SECRET_ID
-# applicaster-login-flow-auth
