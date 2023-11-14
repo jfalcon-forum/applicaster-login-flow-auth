@@ -6,7 +6,7 @@ require("dotenv").config();
 const getAccessToken = async (email, password) => {
   let options = {
     method: "POST",
-    url: "https://login-test.forumcomm.com/oauth/token",
+    url: "https://login.forumcomm.com/oauth/token",
     headers: { "content-type": "application/x-www-form-urlencoded" },
     data: new URLSearchParams({
       grant_type: "password",
@@ -14,8 +14,8 @@ const getAccessToken = async (email, password) => {
       password: password,
       audience: "https://applicaster-integration",
       scope: "offline_access",
-      client_id: process.env.AUTH_TEST_CLIENT_ID,
-      client_secret: process.env.AUTH_TEST_SECRET_ID,
+      client_id: process.env.AUTH_CLIENT_ID,
+      client_secret: process.env.AUTH_SECRET_ID,
     }),
   };
 
@@ -46,12 +46,12 @@ const getAccessToken = async (email, password) => {
 const getRefreshAccessToken = async (token) => {
   var options = {
     method: "POST",
-    url: "https://login-test.forumcomm.com/oauth/token",
+    url: "https://login.forumcomm.com/oauth/token",
     headers: { "content-type": "application/x-www-form-urlencoded" },
     data: new URLSearchParams({
       grant_type: "refresh_token",
-      client_id: process.env.AUTH_TEST_CLIENT_ID,
-      client_secret: process.env.AUTH_TEST_SECRET_ID,
+      client_id: process.env.AUTH_CLIENT_ID,
+      client_secret: process.env.AUTH_SECRET_ID,
       refresh_token: token,
     }),
   };
@@ -82,11 +82,11 @@ const getRefreshAccessToken = async (token) => {
 const revokeRefreshToken = async (token) => {
   var options = {
     method: "POST",
-    url: "https://login-test.forumcomm.com/oauth/revoke",
+    url: "https://login.forumcomm.com/oauth/revoke",
     headers: { "content-type": "application/x-www-form-urlencoded" },
     data: new URLSearchParams({
-      client_id: process.env.AUTH_TEST_CLIENT_ID,
-      client_secret: process.env.AUTH_TEST_SECRET_ID,
+      client_id: process.env.AUTH_CLIENT_ID,
+      client_secret: process.env.AUTH_SECRET_ID,
       token: token,
     }),
   };
@@ -105,10 +105,10 @@ const revokeRefreshToken = async (token) => {
 const resetPassword = async (email) => {
   let options = {
     method: "POST",
-    url: "https://login-test.forumcomm.com/dbconnections/change_password",
+    url: "https://login.forumcomm.com/dbconnections/change_password",
     headers: { "content-type": "application/json" },
     data: {
-      client_id: process.env.AUTH_TEST_CLIENT_ID,
+      client_id: process.env.AUTH_CLIENT_ID,
       email: email,
       connection: "Username-Password-Authentication",
     },
