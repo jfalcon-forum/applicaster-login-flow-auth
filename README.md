@@ -33,28 +33,33 @@ Required Environment Variables
 
 API Gateway needs to be configured with following endpoints
 
-- /login
-  - POST
-  - payload:
-    ```
-    {
-        "username": "example@gmail.com",
-        "password": "test@123"
-    }
-    ```
-- /refresh-token
-  - POST
-  - payload:
-    ```
-    {
-        "refresh_token": "REFRESH_TOKEN_VALUE"
-    }
-    ```
-- /reset-password
-  - POST
-  - payload:
-    ```
-    {
-        “email”: “YOUR_EMAIL@EMAIL.COM”
-    }
-    ```
+### /login
+
+- POST
+- payload:
+  ```
+  {
+      "username": "example@gmail.com",
+      "password": "test@123"
+  }
+  ```
+
+### /refresh-token
+
+- POST
+- payload:
+  ```
+  {
+      "refresh_token": "REFRESH_TOKEN_VALUE"
+  }
+  ```
+
+### /reset-password
+
+- POST
+- payload:
+  ```
+  {
+      “email”: “YOUR_EMAIL@EMAIL.COM”
+  }
+  ```
